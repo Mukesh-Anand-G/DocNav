@@ -1,6 +1,6 @@
 # DocNav: AI-Powered Document Querying with Citations
 
-![DocNav Logo](https://raw.githubusercontent.com/Mukesh-Anand-G/DocNav/main/assets/logo.png)
+![DocNav Logo](logo.png)
 
 [![PyPI version](https://badge.fury.io/py/docnav.svg)](https://badge.fury.io/py/docnav)
 [![Python versions](https://img.shields.io/pypi/pyversions/docnav.svg)](https://pypi.org/project/docnav/)
@@ -9,19 +9,53 @@
 [![GitHub stars](https://img.shields.io/github/stars/Mukesh-Anand-G/DocNav.svg?style=social)](https://github.com/Mukesh-Anand-G/DocNav)
 [![GitHub forks](https://img.shields.io/github/forks/Mukesh-Anand-G/DocNav.svg?style=social)](https://github.com/Mukesh-Anand-G/DocNav)
 [![GitHub issues](https://img.shields.io/github/issues/Mukesh-Anand-G/DocNav.svg)](https://github.com/Mukesh-Anand-G/DocNav/issues)
-![PyPI Downloads](https://static.pepy.tech/badge/docnav)
+
 
 ---
 
-## 🧠 **"I am DocNav. I'm not just a tool, I'm your AI-powered research assistant."**
+## 🧠 **"DocNav: Document-Centric AI Research Assistant"**
 
-Look, let's cut the crap. You've got documents. Lots of them. PDFs, Word docs, Excel sheets, PowerPoint presentations - the whole digital kitchen sink. And you need answers. Not just "find me the word 'revenue'" nonsense. You need **intelligent answers** with **source citations**.
+DocNav is a document-centric AI research assistant built to enable semantic querying and structured reasoning over large, unstructured document collections.
 
-That's where I come in.
+It supports ingestion of common enterprise and research formats including **PDF**, **DOCX**, **XLSX**, and **PPTX**. Rather than relying on keyword-based search, DocNav uses embedding-based retrieval, context-aware chunking, and LLM-driven reasoning to generate answers grounded in source documents.
 
-I'm DocNav, and I'm here to revolutionize how you interact with your documents. Think of me as Tony Stark's JARVIS for your document library - but instead of controlling Iron Man suits, I control knowledge.
+## Core Capabilities
 
-## 🚀 **"Hold my beer while I show you what I can do"**
+- Multi-format document ingestion (PDF, Word, Excel, PowerPoint)
+- Semantic search using vector embeddings
+- Chunk-level indexing for precise context retrieval
+- Retrieval-Augmented Generation (RAG) pipeline
+- Source-cited responses for traceability
+- Scalable design for large document repositories
+
+## Typical Use Cases
+
+- Navigating technical documentation
+- Research paper analysis
+- Internal knowledge base querying
+- Compliance, audit, and policy review
+- Enterprise document intelligence
+
+## How It Works (High-Level)
+
+1. Documents are parsed and normalized into text
+2. Content is split into semantically meaningful chunks
+3. Chunks are embedded and stored in a vector database
+4. User queries are embedded and matched via similarity search
+5. Retrieved context is passed to an LLM for grounded response generation
+6. Relevant source references are attached to each answer
+
+## Design Goals
+
+- Accuracy over verbosity
+- Deterministic, traceable outputs
+- Model-agnostic and backend-flexible
+- Extensible ingestion and retrieval pipeline
+
+DocNav is designed as a practical foundation for building document intelligence systems using modern NLP and retrieval techniques.
+
+
+## 🚀 **"Below is an overview of the system in action"**
 
 ### **Installation (Because even geniuses need to start somewhere)**
 
@@ -81,39 +115,68 @@ for source in answer.sources:
     print(f"Content: {source.text[:200]}...")
 ```
 
-## 🎯 **"I don't just search. I understand."**
+## Beyond Search: Context-Aware Understanding
 
-### **Multi-Format Support (I speak fluent document)**
+DocNav is designed to go beyond keyword matching by performing semantic analysis and context-aware retrieval across diverse document types.
 
-- **📚 PDF**: Academic papers, reports, contracts
-- **📝 DOCX**: Business documents, proposals, reports  
-- **📊 Excel**: Spreadsheets, financial data, analytics
-- **📽 PowerPoint**: Presentations, slides, training materials
-- **📄 TXT/MD**: Code documentation, notes, markdown files
-- **📈 CSV**: Data exports, analytics, logs
+---
 
-### **Smart Chunking (Because context is king)**
+## Multi-Format Document Support
 
-I don't just split documents randomly. I use intelligent chunking that:
-- Preserves semantic coherence
-- Maintains context boundaries
-- Optimizes for LLM understanding
-- Handles different document types appropriately
+DocNav provides native ingestion and parsing support for a wide range of commonly used document formats:
 
-### **Vector Search (Speed of thought, literally)**
+- **PDF** — Research papers, reports, contracts
+- **DOCX** — Business documents, proposals, technical reports
+- **XLSX / Excel** — Spreadsheets, financial models, analytical data
+- **PPTX / PowerPoint** — Presentations, training decks, slide content
+- **TXT / Markdown (MD)** — Documentation, notes, code-related text
+- **CSV** — Structured data exports, logs, tabular datasets
 
-- **⚡ Sub-100ms search** on typical queries
-- **🎯 Semantic similarity** not just keyword matching
-- **📊 Ranked results** by relevance score
-- **🔍 Multi-document cross-referencing**
+Each format is processed using format-specific loaders to preserve structural and semantic integrity.
 
-### **Multiple LLMs (I work with the best minds)**
+---
 
-- **🤖 OpenAI**: GPT-3.5, GPT-4, GPT-4-turbo
-- **🧠 Gemini**: gemini-1.5-pro, gemini-2.0-flash
-- **🎭 Claude**: Claude-3-haiku, Claude-3-sonnet, Claude-3-opus
+## Intelligent Chunking Strategy
 
-## 📋 **Command Reference (Your Swiss Army Knife)**
+Rather than arbitrary text splitting, DocNav applies structured chunking optimized for downstream retrieval and reasoning:
+
+- Preserves semantic coherence across sections
+- Respects logical boundaries (headings, tables, paragraphs)
+- Adapts chunking behavior based on document type
+- Optimized for embedding quality and LLM context windows
+
+This approach improves both retrieval precision and answer grounding.
+
+---
+
+## Vector-Based Semantic Search
+
+DocNav uses embedding-driven vector search to enable fast and meaningful retrieval:
+
+- Low-latency similarity search on typical queries
+- Semantic relevance scoring instead of keyword matching
+- Ranked retrieval across single or multiple documents
+- Cross-document context aggregation
+
+This allows DocNav to surface relevant information even when queries and source text use different terminology.
+
+---
+
+## Multi-Model LLM Support
+
+DocNav is model-agnostic and supports multiple large language model providers:
+
+- **OpenAI** — GPT-3.5, GPT-4, GPT-4 Turbo
+- **Google Gemini** — gemini-1.5-pro, gemini-2.0-flash
+- **Anthropic Claude** — Claude 3 Haiku, Sonnet, Opus
+
+LLM selection can be configured based on performance, cost, or deployment requirements.
+
+---
+
+## Command Reference
+
+The following section documents the available commands and usage patterns for interacting with DocNav.
 
 ### **Corpus Management**
 ```bash
@@ -178,9 +241,9 @@ export ANTHROPIC_API_KEY="your-claude-key"
 
 Clean, efficient, and ready when you are.
 
-## 🎯 **Advanced Usage (For the power users)**
+##  **Advanced Usage (For the power users)**
 
-### **Custom Chunking (Fine-tune my brain)**
+### **Custom Chunking**
 
 ```python
 # Larger chunks for complex documents
@@ -190,7 +253,7 @@ corpus = Corpus("research", chunk_size=2000)
 corpus.add(["legal_document.pdf"], chunk_size=500)
 ```
 
-### **Filtering Queries (Surgical precision)**
+### **Filtering Queries**
 
 ```python
 # Ask about specific document types
@@ -206,7 +269,7 @@ answer = corpus.ask(
 )
 ```
 
-### **Batch Processing (Handle volumes like a boss)**
+### **Batch Processing**
 
 ```python
 # Process entire directories efficiently
@@ -217,7 +280,7 @@ files = [
 corpus.add(files, use_ocr=True, chunk_size=1000)
 ```
 
-## 🔌 **API Integration (I play well with others)**
+## 🔌 **API Integration**
 
 ### **OpenAI Integration**
 
@@ -253,26 +316,26 @@ answer = corpus.ask(
 )
 ```
 
-## 🛠️ **Development (Join the genius club)**
+## 🛠️ **Development**
 
 ### **Setup Your Workshop**
 
 ```bash
-# Clone my brain
+
 git clone https://github.com/Mukesh-Anand-G/DocNav.git
 cd DocNav
 
 # Install in development mode
 pip install -e .[dev]
 
-# Run the tests (because even geniuses make mistakes)
+# Run the tests
 pytest
 
-# Format the code (keep it clean)
+# Format the code
 black docnav/
 ```
 
-### **Project Architecture (How I'm built)**
+### **Project Architecture**
 
 ```
 docnav/
@@ -293,7 +356,7 @@ docnav/
 └── .gitignore         # What to ignore
 ```
 
-## 📊 **Performance (Because numbers don't lie)**
+## 📊 **Performance**
 
 - **🚀 Processing Speed**: ~1000 pages/minute (varies with hardware)
 - **💾 Memory Efficiency**: ~50MB for 1000 documents
@@ -302,9 +365,9 @@ docnav/
 - **🎯 Accuracy**: High-precision semantic search
 - **📈 Scalability**: Tested with 10,000+ document collections
 
-## 🤝 **Contributing (Help me get smarter)**
+## 🤝 **Contributing**
 
-I may be brilliant, but even I know that collaboration makes everyone better. See my [Contributing Guide](CONTRIBUTING.md) for details.
+See my [Contributing Guide](CONTRIBUTING.md) for details.
 
 1. **Fork the repository** - Make it your own
 2. **Create a feature branch** - `git checkout -b feature/your-brilliant-idea`
@@ -323,13 +386,6 @@ MIT License - because great code should be free. See [LICENSE](LICENSE) for the 
 - **Sentence Transformers** - For the embeddings that make search possible
 - **All contributors** - For making me better than I could be alone
 
-## 📞 **Support (When you need help)**
-
-- **📚 Documentation**: [GitHub Wiki](https://github.com/Mukesh-Anand-G/DocNav/wiki)
-- **🐛 Issues**: [GitHub Issues](https://github.com/Mukesh-Anand-G/DocNav/issues) (I fix bugs fast)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/Mukesh-Anand-G/DocNav/discussions)
-- **📧 Direct**: Email me at ai.mukeshanandg@gmail.com
-
 ## 🗺️ **Roadmap (What's next in my evolution)**
 
 - [ ] **Web Interface** - Because not everyone loves the terminal
@@ -345,8 +401,6 @@ MIT License - because great code should be free. See [LICENSE](LICENSE) for the 
 
 Look, I could go on about features and technical details all day. But here's what really matters:
 
-**I solve problems.**
-
 You have documents. You need answers. I bridge that gap with intelligence, speed, and reliability.
 
 I'm not just another document search tool. I'm your AI-powered research assistant. I understand context. I provide citations. I work with multiple AI models. I handle real-world document collections.
@@ -355,7 +409,7 @@ And I do it all with style.
 
 ---
 
-## 🚀 **"Enough talk. Time to get started."**
+## **"Time to get started."**
 
 ```bash
 # Install me
