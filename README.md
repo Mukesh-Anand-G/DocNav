@@ -13,7 +13,7 @@
 
 ---
 
-## 🧠 **"DocNav: Document-Centric AI Research Assistant"**
+##  **"DocNav: Document-Centric AI Research Assistant"**
 
 DocNav is a document-centric AI research assistant built to enable semantic querying and structured reasoning over large, unstructured document collections.
 
@@ -55,7 +55,7 @@ It supports ingestion of common enterprise and research formats including **PDF*
 DocNav is designed as a practical foundation for building document intelligence systems using modern NLP and retrieval techniques.
 
 
-## 🚀 **"Below is an overview of the system in action"**
+##  **"Below is an overview of the system in action"**
 
 ### **Installation (Because even geniuses need to start somewhere)**
 
@@ -205,9 +205,9 @@ docnav quick <file> "<question>"        # Fast answers
 --details                            # Show the nitty-gritty
 ```
 
-## 🔧 **Configuration (Set up your workshop)**
+##  **Configuration**
 
-### **Environment Variables (The keys to the kingdom)**
+### **Environment Variables**
 
 ```bash
 # OpenAI - The classic
@@ -223,10 +223,10 @@ export ANTHROPIC_API_KEY="your-claude-key"
 ### **Default Models (My go-to choices)**
 
 - **OpenAI**: `gpt-3.5-turbo` (balanced) or `gpt-4-turbo` (power)
-- **Gemini**: `gemini-2.5-flash` (speed) or `gemini-1.5-pro` (quality)
+- **Gemini**: `gemini-2.5-flash` (speed) or `gemini-2.5-pro` (quality)
 - **Claude**: `claude-3-haiku-20240307` (fast) or `claude-3-sonnet-20240229` (balanced)
 
-## 📁 **Storage (Where I keep your knowledge)**
+## 📁 **Storage**
 
 ```
 ~/.docnav/
@@ -280,7 +280,7 @@ files = [
 corpus.add(files, use_ocr=True, chunk_size=1000)
 ```
 
-## 🔌 **API Integration**
+##  **API Integration**
 
 ### **OpenAI Integration**
 
@@ -316,7 +316,7 @@ answer = corpus.ask(
 )
 ```
 
-## 🛠️ **Development**
+##  **Development**
 
 ### **Setup Your Workshop**
 
@@ -358,14 +358,14 @@ docnav/
 
 ## 📊 **Performance**
 
-- **🚀 Processing Speed**: ~1000 pages/minute (varies with hardware)
-- **💾 Memory Efficiency**: ~50MB for 1000 documents
-- **⚡ Search Latency**: <100ms for typical queries
-- **📚 Format Support**: 10+ document types
-- **🎯 Accuracy**: High-precision semantic search
-- **📈 Scalability**: Tested with 10,000+ document collections
+- ** Processing Speed**: ~1000 pages/minute (varies with hardware)
+- ** Memory Efficiency**: ~50MB for 1000 documents
+- ** Search Latency**: <100ms for typical queries
+- ** Format Support**: 10+ document types
+- ** Accuracy**: High-precision semantic search
+- ** Scalability**: Tested with 10,000+ document collections
 
-## 🤝 **Contributing**
+##  **Contributing**
 
 See my [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -374,11 +374,11 @@ See my [Contributing Guide](CONTRIBUTING.md) for details.
 3. **Make your magic happen** - Code, test, document
 4. **Submit a pull request** - Let me review your work
 
-## 📄 **License (The legal stuff)**
+##  **License (The legal stuff)**
 
 MIT License - because great code should be free. See [LICENSE](LICENSE) for the boring details.
 
-## 🙏 **Acknowledgments (Standing on the shoulders of giants)**
+## 🙏 **Acknowledgments**
 
 - **OpenAI** - For the GPT models that power my reasoning
 - **Google** - For Gemini's speed and efficiency
