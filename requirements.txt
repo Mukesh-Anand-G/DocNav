@@ -1,0 +1,27 @@
+# Core dependencies - always required
+numpy>=1.21.0
+tqdm>=4.62.0
+pathlib2>=2.3.6; python_version<"3.4"
+
+# Optional dependencies for full functionality
+# Install with: pip install docnav[full]
+sentence-transformers>=2.0.0
+python-docx>=0.8.11
+PyPDF2>=3.0.0
+pandas>=1.3.0
+python-pptx>=0.6.21
+openai>=1.0.0
+google-generativeai>=0.3.0
+anthropic>=0.8.0
+
+# OCR dependencies
+# Install with: pip install docnav[ocr]
+pdf2image>=1.16.0
+pytesseract>=0.3.10
+
+# Development dependencies
+# Install with: pip install docnav[dev]
+pytest>=7.0.0
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.991
