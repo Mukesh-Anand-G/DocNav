@@ -430,4 +430,4 @@ docnav query mydocs "What are the key insights?"
 ---
 
 **Made with ❤️ and a lot of ☕ by [Mukesh Anand G](https://github.com/Mukesh-Anand-G)**  
-*AI Engineer | Mathematical Genius | Algorithm Architect | Your Document Intelligence Partner*
+*AI Engineer | Mathematical Enthusiast | Algorithm Architect | Caffiene Addict*
